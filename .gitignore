@@ -1,0 +1,6 @@
+# Python
+__pycache__/
+*.pyc
+
+# Grader cache (Claude call results, STEP analysis, usage log) — regenerated automatically
+.grader_cache/
