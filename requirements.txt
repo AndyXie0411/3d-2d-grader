@@ -1,0 +1,7 @@
+pydantic>=2
+numpy
+scipy
+rapidfuzz
+pillow
+cadquery-ocp==7.7.2  # 读取 STEP 文件，核对图纸尺寸
+anthropic  # 只有用 API 方式时才需要

@@ -1,0 +1,422 @@
+{
+  "views": [
+    {
+      "label": "MAIN",
+      "kind": "main",
+      "hatched": false,
+      "cut_lines_shown": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "label": "A-A",
+      "kind": "section",
+      "hatched": true,
+      "cut_lines_shown": [
+        "G",
+        "H"
+      ]
+    },
+    {
+      "label": "E-E",
+      "kind": "section",
+      "hatched": true,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "VIEW G",
+      "kind": "direction",
+      "hatched": false,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "VIEW H",
+      "kind": "direction",
+      "hatched": false,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "ISOMETRIC",
+      "kind": "isometric",
+      "hatched": false,
+      "cut_lines_shown": []
+    }
+  ],
+  "dimensions": [
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 60.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 58.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 100.0,
+      "tolerance": {
+        "upper": 0.02,
+        "lower": null,
+        "fit": null
+      },
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 66.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 45.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 32.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 18.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 16.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 75.0,
+      "tolerance": {
+        "upper": 0.0,
+        "lower": 0.0,
+        "fit": null
+      },
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 40.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 85.0,
+      "tolerance": {
+        "upper": 0.0,
+        "lower": 0.0,
+        "fit": null
+      },
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 20.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "A-A",
+      "kind": "linear",
+      "value": 50.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "A-A",
+      "kind": "linear",
+      "value": 55.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "A-A",
+      "kind": "depth",
+      "value": 35.0,
+      "tolerance": {
+        "upper": 0.0,
+        "lower": -0.02,
+        "fit": null
+      },
+      "count": 4
+    },
+    {
+      "view": "A-A",
+      "kind": "linear",
+      "value": 100.0,
+      "tolerance": {
+        "upper": 0.0,
+        "lower": 0.0,
+        "fit": null
+      },
+      "count": 1
+    },
+    {
+      "view": "A-A",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "E-E",
+      "kind": "depth",
+      "value": 40.0,
+      "tolerance": {
+        "upper": 0.0,
+        "lower": -0.02,
+        "fit": null
+      },
+      "count": 4
+    },
+    {
+      "view": "VIEW H",
+      "kind": "linear",
+      "value": 18.0,
+      "tolerance": null,
+      "count": 1
+    },
+    {
+      "view": "VIEW H",
+      "kind": "linear",
+      "value": 30.0,
+      "tolerance": null,
+      "count": 1
+    }
+  ],
+  "holes": [
+    {
+      "view": "MAIN",
+      "count": 4,
+      "diameter": 4.2,
+      "depth": 23.0,
+      "through": false,
+      "thread": "M5-6H",
+      "thread_depth": 20.0,
+      "both_sides": true,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "MAIN",
+      "count": 4,
+      "diameter": 5.0,
+      "depth": 32.0,
+      "through": false,
+      "thread": "M6-6H",
+      "thread_depth": 30.0,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "MAIN",
+      "count": 16,
+      "diameter": 4.2,
+      "depth": 22.0,
+      "through": false,
+      "thread": "M5-6H",
+      "thread_depth": 20.0,
+      "both_sides": true,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "A-A",
+      "count": 4,
+      "diameter": 23.0,
+      "depth": null,
+      "through": false,
+      "thread": null,
+      "thread_depth": null,
+      "both_sides": false,
+      "fit": "H7",
+      "tol_upper": 0.021,
+      "tol_lower": 0.0
+    },
+    {
+      "view": "A-A",
+      "count": 2,
+      "diameter": 20.0,
+      "depth": null,
+      "through": true,
+      "thread": null,
+      "thread_depth": null,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "E-E",
+      "count": 4,
+      "diameter": 25.0,
+      "depth": null,
+      "through": false,
+      "thread": null,
+      "thread_depth": null,
+      "both_sides": false,
+      "fit": "H7",
+      "tol_upper": 0.021,
+      "tol_lower": 0.0
+    },
+    {
+      "view": "E-E",
+      "count": 2,
+      "diameter": 22.0,
+      "depth": null,
+      "through": true,
+      "thread": null,
+      "thread_depth": null,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "VIEW H",
+      "count": 8,
+      "diameter": 4.2,
+      "depth": 19.0,
+      "through": false,
+      "thread": "M5-6H",
+      "thread_depth": 15.0,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    }
+  ],
+  "chamfers": [
+    {
+      "view": "A-A",
+      "count": 4,
+      "size": 1.0,
+      "angle": 45.0
+    },
+    {
+      "view": "E-E",
+      "count": 4,
+      "size": 1.0,
+      "angle": 45.0
+    }
+  ],
+  "gdt": [
+    {
+      "view": "MAIN",
+      "symbol": "parallelism",
+      "value": 0.02,
+      "datums": []
+    },
+    {
+      "view": "A-A",
+      "symbol": "concentricity",
+      "value": 0.02,
+      "datums": [
+        "C"
+      ]
+    },
+    {
+      "view": "A-A",
+      "symbol": "perpendicularity",
+      "value": 0.02,
+      "datums": [
+        "A"
+      ]
+    },
+    {
+      "view": "E-E",
+      "symbol": "concentricity",
+      "value": 0.02,
+      "datums": [
+        "D"
+      ]
+    },
+    {
+      "view": "E-E",
+      "symbol": "perpendicularity",
+      "value": 0.02,
+      "datums": [
+        "B"
+      ]
+    }
+  ],
+  "datums": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "roughness": [
+    {
+      "view": "GENERAL",
+      "ra": 3.2
+    },
+    {
+      "view": "MAIN",
+      "ra": 1.6
+    },
+    {
+      "view": "A-A",
+      "ra": 1.6
+    },
+    {
+      "view": "E-E",
+      "ra": 1.6
+    }
+  ],
+  "title_block": {
+    "part_title": "o_ring_xy_base",
+    "case_id": "case 44",
+    "material": "ALUMINUM ALLOY",
+    "scale": "1:3",
+    "units": "mm",
+    "projection": "first_angle",
+    "sheet": "1 / 1"
+  },
+  "tech_requirements": [
+    "REMOVE ALL BURRS AND BREAK SHARP EDGES.",
+    "UNSPECIFIED HOLE-TO-HOLE DISTANCE TOLERANCE: ±0.1 mm.",
+    "UNSPECIFIED GEOMETRIC TOLERANCES: ISO 2768-2, CLASS K.",
+    "UNSPECIFIED DIMENSIONAL TOLERANCES: ISO 2768-1, CLASS m.",
+    "SURFACE TREATMENT: HARD CLEAR ANODIZING."
+  ],
+  "layout_issues": [
+    "主视图左侧：尺寸“100”及其公差文字“+0.020”与平行度公差框“// 0.02”重叠，难以辨认公差值和公差框内容"
+  ]
+}

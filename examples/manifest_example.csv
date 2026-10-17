@@ -1,0 +1,5 @@
+case_id,generator,candidate,step,reference,model_images,inventory
+case44,claude,outputs/claude/case44_run1.png,case44.step,,,
+case44,claude,outputs/claude/case44_run2.png,case44.step,,,
+case44,chatgpt,outputs/chatgpt/case44_run1.png,case44.step,,,
+case45,claude,outputs/claude/case45_run1.png,case45.step,,,

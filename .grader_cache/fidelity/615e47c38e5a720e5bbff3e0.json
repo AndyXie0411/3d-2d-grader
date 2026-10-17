@@ -1,0 +1,66 @@
+{
+  "feature_checks": [
+    {
+      "feature_id": "F1",
+      "status": "shown_and_dimensioned",
+      "note": "主视图的轮廓是下宽 150、上窄 60 的梯形，总高 100；A-A 剖视图给出 150 宽、支腿高 55；VIEW G 为 150×150 方形，两支腿的方形端面位于中间带。整体外形和图纸上的轴测图都与 3D 模型一致，外形尺寸齐全。"
+    },
+    {
+      "feature_id": "F2",
+      "status": "shown_and_dimensioned",
+      "note": "A-A 剖视图中两支腿之间的上部空档就是贯通槽，槽宽标了 50，深度可由支腿高 55 确定；VIEW G 中间一条贯穿全长的竖带也表示了这条槽。"
+    },
+    {
+      "feature_id": "F3",
+      "status": "shown_not_dimensioned",
+      "note": "VIEW G、VIEW H、A-A 和 E-E 中都画出了中部的圆角矩形开口/腔体，轴测图上槽内也能看到圆弧切口。但所有视图都没有标它的长、宽、圆角和深度，定形尺寸缺失。"
+    },
+    {
+      "feature_id": "F4",
+      "status": "shown_and_dimensioned",
+      "note": "主视图中两个侧面大孔在同一高度，孔距 85；在 3D 轴测图中呈斜线排列是投影造成的，二者一致。E-E 剖视图标注了 2×Ø22 THRU、4×Ø25 H7 沉孔、4×1×45° 倒角，并给出了同轴度和垂直度公差。"
+    },
+    {
+      "feature_id": "F5",
+      "status": "shown_and_dimensioned",
+      "note": "主视图中每个大孔周围都画了一组小孔。16×Ø4.2↓22 M5（BOTH SIDES）和 4×Ø5↓32 M6 合计约为每个大孔 6 个，与模型一致；位置尺寸有 40、20、45、18、16 等。"
+    },
+    {
+      "feature_id": "F6",
+      "status": "shown_and_dimensioned",
+      "note": "主视图上部、两个大孔之间偏向支腿端的位置有两个单独小孔，标注为 4×Ø4.2↓23 M5-6H↓20 BOTH SIDES，高度定位 66。位置与模型中两个孔偏向支腿端面的分布相符。"
+    },
+    {
+      "feature_id": "F7",
+      "status": "shown_and_dimensioned",
+      "note": "A-A 剖视图标注了 2×Ø20 THRU、4×Ø23 H7 沉孔、4×1×45° 倒角，孔距 100；VIEW G 中每个方形端面各画了一个中心大孔。"
+    },
+    {
+      "feature_id": "F8",
+      "status": "shown_and_dimensioned",
+      "note": "VIEW G 中每个端面在角部画了 4 个小孔，呈方形分布，与模型一致。孔规格 8×Ø4.2↓19 M5-6H↓15 和间距 18、30 标在 VIEW H 上；VIEW G 本身没有单独标注，对应关系略有歧义。"
+    },
+    {
+      "feature_id": "F9",
+      "status": "shown_and_dimensioned",
+      "note": "主视图中由上宽 60 斜向过渡到下宽 150 的两条斜线就是支腿斜面；VIEW G 上下两条带表示斜面区域。斜面由 60、150、55、100 等尺寸确定。"
+    }
+  ],
+  "outline_matches": {
+    "passed": true,
+    "note": "主视图（梯形侧面）、A-A（两支腿夹槽）、VIEW G（方形端面加斜面带）和图纸轴测图，与 3D 模型的上块、斜削支腿、方形端面、中间槽一致。"
+  },
+  "projection_correct": {
+    "passed": true,
+    "note": "图纸声明第一角投影。A-A、E-E 剖切线位置和投射方向与剖视图内容对应：E-E 中支腿竖孔投影的位置与 VIEW G 一致；G、H 向视图的箭头方向与视图内容一致，没有发现投影矛盾。"
+  },
+  "sections_meaningful": {
+    "passed": true,
+    "note": "A-A 剖切位置经过支腿端面孔，揭示了贯通孔、沉孔和中部腔体；E-E 剖切位置经过侧面大孔中心，揭示了 Ø22 贯通孔、Ø25 沉孔和中部开口。两处剖切都有意义。"
+  },
+  "proportions_consistent": {
+    "passed": true,
+    "note": "按 150≈240px 换算：总高 100、66、45、孔距 85、A-A 支腿高 55、槽宽 50、VIEW G 的 150×150，都与图形比例相符；E-E 中竖孔的位置与 VIEW G 对应。"
+  },
+  "phantom_features": []
+}

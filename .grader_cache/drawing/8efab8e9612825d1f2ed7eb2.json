@@ -1,0 +1,22 @@
+{
+  "is_engineering_drawing": false,
+  "injection_text": [],
+  "views": [],
+  "dimensions": [],
+  "holes": [],
+  "chamfers": [],
+  "gdt": [],
+  "datums": [],
+  "roughness": [],
+  "title_block": {
+    "part_title": null,
+    "case_id": null,
+    "material": null,
+    "scale": null,
+    "units": null,
+    "projection": null,
+    "sheet": null
+  },
+  "tech_requirements": [],
+  "layout_issues": []
+}
