@@ -1,0 +1,669 @@
+{
+  "reward": 0.9773,
+  "capped_by": "",
+  "needs_review": false,
+  "agreement": {},
+  "gates": [
+    {
+      "id": "gate:is_engineering_drawing",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:has_orthographic_view",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:at_least_3_dimensions",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "criteria": [
+    {
+      "id": "accuracy:[MAIN] linear 150",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 32.5",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 85",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 20",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 20",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 25",
+      "score": 1.0,
+      "reason": "STEP 中沿 z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 32",
+      "score": 1.0,
+      "reason": "STEP 中沿 z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 45",
+      "score": 1.0,
+      "reason": "STEP 中沿 z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 58",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 34",
+      "score": 1.0,
+      "reason": "STEP 中沿 z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[MAIN] linear 60",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION A-A] diameter 23",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION A-A] diameter 20",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION A-A] linear 35",
+      "score": 1.0,
+      "reason": "STEP 中沿 z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION A-A] linear 100",
+      "score": 1.0,
+      "reason": "STEP 中沿 z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION A-A] linear 35",
+      "score": 1.0,
+      "reason": "STEP 中沿 z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION A-A] linear 100",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION A-A] linear 25",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION B-B] linear 40",
+      "score": 1.0,
+      "reason": "STEP 中沿 x/y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION B-B] linear 40",
+      "score": 1.0,
+      "reason": "STEP 中沿 x/y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION B-B] diameter 22",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[SECTION B-B] diameter 25",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP] radius 10",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP] linear 50",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP] linear 80",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP] linear 150",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP] linear 30",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP] linear 18",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[VIEW C] linear 40",
+      "score": 1.0,
+      "reason": "STEP 中沿 x/y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[VIEW C] linear 30",
+      "score": 1.0,
+      "reason": "STEP 中沿 y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[VIEW D] linear 40",
+      "score": 1.0,
+      "reason": "STEP 中沿 x/y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[VIEW D] linear 18",
+      "score": 1.0,
+      "reason": "STEP 中沿 x/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[VIEW D] linear 66",
+      "score": 1.0,
+      "reason": "STEP 中沿 x/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:hole:[MAIN] 8×Ø4.2 ↧22",
+      "score": 1.0,
+      "reason": "与 STEP 一致",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:hole:[MAIN] 2×Ø4.2 ↧23",
+      "score": 1.0,
+      "reason": "与 STEP 一致",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:hole:[TOP] 8×Ø4.2 ↧19",
+      "score": 1.0,
+      "reason": "与 STEP 一致",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:hole:[VIEW C] 8×Ø6.8 ↧32",
+      "score": 1.0,
+      "reason": "与 STEP 一致",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:hole:[VIEW D] 4×Ø5 ↧32",
+      "score": 1.0,
+      "reason": "与 STEP 一致",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:chamfer:1",
+      "score": 1.0,
+      "reason": "STEP 中存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "completeness:外形尺寸 x 150",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:外形尺寸 y 150",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:外形尺寸 z 100",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 8×Ø4.2 ↧19",
+      "score": 1.0,
+      "reason": "已完整标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 16×Ø4.2 ↧22",
+      "score": 1.0,
+      "reason": "已完整标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø4.2 ↧23",
+      "score": 1.0,
+      "reason": "已完整标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø5 ↧32",
+      "score": 1.0,
+      "reason": "已完整标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 8×Ø6.8 ↧32",
+      "score": 1.0,
+      "reason": "已完整标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 2×Ø20 THRU",
+      "score": 0.65,
+      "reason": "未写 THRU",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 2×Ø22 THRU",
+      "score": 0.65,
+      "reason": "未写 THRU",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø23 ↧35",
+      "score": 0.7,
+      "reason": "数量未标全",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø25 ↧40",
+      "score": 0.7,
+      "reason": "数量未标全",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:圆角 R10",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:倒角 1×45°（共 8 处）",
+      "score": 0.6,
+      "reason": "只标了 1 处",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:x 方向位置（17 个）",
+      "score": 1.0,
+      "reason": "全部能由尺寸确定",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:y 方向位置（10 个）",
+      "score": 1.0,
+      "reason": "全部能由尺寸确定",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:z 方向位置（11 个）",
+      "score": 1.0,
+      "reason": "全部能由尺寸确定",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:剖视图（零件有沉孔/盲孔等内部结构）",
+      "score": 1.0,
+      "reason": "已有",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "standard:有主视图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "standard:至少 3 个正交/剖/向视图",
+      "score": 1.0,
+      "reason": "实际 6 个",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "standard:有轴测图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "standard:尺寸数量 ≥ 10（含孔标注）",
+      "score": 1.0,
+      "reason": "实际 33 个尺寸 + 5 组孔标注",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[SECTION A-A] parallelism 引用的基准已定义",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[SECTION A-A] perpendicularity 引用的基准已定义",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[SECTION B-B] parallelism 引用的基准已定义",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:基准 A 被形位公差引用",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:剖切/向视符号 A 有对应视图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:剖切/向视符号 B 有对应视图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:剖切/向视符号 C 有对应视图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:剖切/向视符号 D 有对应视图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:视图 SECTION A-A 在其他视图上有剖切/投射符号",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:视图 SECTION B-B 在其他视图上有剖切/投射符号",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:视图 VIEW C 在其他视图上有剖切/投射符号",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:视图 VIEW D 在其他视图上有剖切/投射符号",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:剖视图 SECTION A-A 画了剖面线",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:剖视图 SECTION B-B 画了剖面线",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:视图标签不重复",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[MAIN] 8×Ø4.2 M5-6H 底孔直径正确",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[MAIN] 8×Ø4.2 螺纹深度 < 钻孔深度",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[MAIN] 2×Ø4.2 M5-6H 底孔直径正确",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[MAIN] 2×Ø4.2 螺纹深度 < 钻孔深度",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[TOP] 8×Ø4.2 M5-6H 底孔直径正确",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[TOP] 8×Ø4.2 螺纹深度 < 钻孔深度",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[VIEW C] 8×Ø6.8 M8-6H 底孔直径正确",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[VIEW C] 8×Ø6.8 螺纹深度 < 钻孔深度",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[VIEW D] 4×Ø5 M6-6H 底孔直径正确",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[VIEW D] 4×Ø5 螺纹深度 < 钻孔深度",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[SECTION A-A] Ra1.6 属于标准系列",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[SECTION B-B] Ra3.2 属于标准系列",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[SECTION B-B] Ra1.6 属于标准系列",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[VIEW D] Ra3.2 属于标准系列",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:[GENERAL] Ra6.3 属于标准系列",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "layout:no_issues",
+      "score": 1.0,
+      "reason": "未发现排版缺陷",
+      "component": "layout",
+      "component_weight": 5
+    }
+  ]
+}

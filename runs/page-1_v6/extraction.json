@@ -1,0 +1,200 @@
+{
+  "is_engineering_drawing": true,
+  "injection_text": [],
+  "views": [
+    {
+      "label": "FRONT VIEW",
+      "kind": "main",
+      "hatched": false,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "TOP VIEW",
+      "kind": "projection",
+      "hatched": false,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "RIGHT VIEW",
+      "kind": "projection",
+      "hatched": false,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "ISOMETRIC REFERENCE",
+      "kind": "isometric",
+      "hatched": false,
+      "cut_lines_shown": []
+    }
+  ],
+  "dimensions": [
+    {
+      "view": "TOP VIEW",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "linear",
+      "value": 100.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "linear",
+      "value": 25.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "linear",
+      "value": 75.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "linear",
+      "value": 80.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "linear",
+      "value": 50.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "radius",
+      "value": 10.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "TOP VIEW",
+      "kind": "depth",
+      "value": 45.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "FRONT VIEW",
+      "kind": "linear",
+      "value": 85.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "FRONT VIEW",
+      "kind": "linear",
+      "value": 32.5,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "FRONT VIEW",
+      "kind": "linear",
+      "value": 100.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "FRONT VIEW",
+      "kind": "linear",
+      "value": 75.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "FRONT VIEW",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "RIGHT VIEW",
+      "kind": "linear",
+      "value": 100.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "RIGHT VIEW",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    }
+  ],
+  "holes": [
+    {
+      "view": "TOP VIEW",
+      "count": 2,
+      "diameter": 23.0,
+      "depth": null,
+      "through": false,
+      "thread": null,
+      "thread_depth": null,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    }
+  ],
+  "chamfers": [],
+  "gdt": [],
+  "datums": [],
+  "roughness": [],
+  "title_block": {
+    "part_title": "CASE44 - MODEL-DERIVED ENGINEERING DRAWING",
+    "case_id": "CASE44",
+    "material": null,
+    "scale": "1:2",
+    "units": "mm",
+    "projection": "third_angle",
+    "sheet": "1 OF 2"
+  },
+  "tech_requirements": [
+    "1. DIMENSIONS ARE IN MILLIMETRES AND ARE NOMINAL VALUES EXTRACTED FROM THE SUPPLIED STEP MODEL.",
+    "2. UNDIMENSIONED SURFACES, ANGLES, BLENDS, CHAMFERS AND CONTOURS SHALL BE GOVERNED BY THE STEP MODEL.",
+    "3. MATERIAL, HEAT TREATMENT, SURFACE FINISH, THREAD SPECIFICATIONS, DATUM SCHEME AND GD&T WERE NOT PRESENT IN THE SOURCE MODEL.",
+    "4. NO MANUFACTURING TOLERANCES ARE IMPLIED BY THIS DRAWING. DESIGN AUTHORITY SHALL ADD REQUIRED TOLERANCES BEFORE RELEASE.",
+    "5. HIDDEN LINES SHOWN DASHED; CENTERLINES SHOWN CHAINED. DO NOT SCALE DRAWING."
+  ],
+  "layout_issues": [
+    "TOP VIEW: the vertical '100 PITCH' dimension/extension line runs through the leader note '2X VERTICAL STEPPED BORES / DIA 23 OUTER / DIA 20 MID / TRANSITIONS PER STEP MODEL', crossing the words 'OUTER' and 'TRANSITIONS'; the leader arrow line also passes through 'DIA 23'",
+    "TOP VIEW: the same vertical dimension line (and its arrowhead) crosses the note '80 x 50 OPENING / R10 CORNERS / DEPTH 45 FROM TOP', overlapping 'OPENING', the 'R' of 'R10' and 'DEPTH 45', so those are hard to read",
+    "TOP VIEW: the vertical centerline and the 75 dimension extension line run through the 'TOP VIEW' label text"
+  ]
+}

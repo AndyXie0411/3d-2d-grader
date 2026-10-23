@@ -1,0 +1,326 @@
+{
+  "reward": 0.7582,
+  "capped_by": "",
+  "needs_review": false,
+  "agreement": {},
+  "gates": [
+    {
+      "id": "gate:is_engineering_drawing",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:has_orthographic_view",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:at_least_3_dimensions",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "criteria": [
+    {
+      "id": "accuracy:[TOP VIEW] linear 150",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] linear 150",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] linear 100",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] linear 25",
+      "score": 1.0,
+      "reason": "STEP 中沿 y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] linear 75",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] linear 80",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] linear 50",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] radius 10",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[TOP VIEW] depth 45",
+      "score": 1.0,
+      "reason": "STEP 中任意方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[FRONT VIEW] linear 85",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[FRONT VIEW] linear 32.5",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[FRONT VIEW] linear 100",
+      "score": 1.0,
+      "reason": "STEP 中沿 y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[FRONT VIEW] linear 75",
+      "score": 1.0,
+      "reason": "STEP 中沿 y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[FRONT VIEW] linear 150",
+      "score": 1.0,
+      "reason": "STEP 中沿 x 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[RIGHT VIEW] linear 100",
+      "score": 1.0,
+      "reason": "STEP 中沿 y/z 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:[RIGHT VIEW] linear 150",
+      "score": 1.0,
+      "reason": "STEP 中沿 x/y 方向存在",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "accuracy:hole:[TOP VIEW] 2×Ø23",
+      "score": 1.0,
+      "reason": "与 STEP 一致",
+      "component": "accuracy",
+      "component_weight": 35
+    },
+    {
+      "id": "completeness:外形尺寸 x 150",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:外形尺寸 y 150",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:外形尺寸 z 100",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 8×Ø4.2 ↧19",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 16×Ø4.2 ↧22",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø4.2 ↧23",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø5 ↧32",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 8×Ø6.8 ↧32",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 2×Ø20 THRU",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 2×Ø22 THRU",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø23 ↧35",
+      "score": 0.35,
+      "reason": "未标孔深、数量未标全",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:孔 4×Ø25 ↧40",
+      "score": 0.0,
+      "reason": "孔径未标",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:圆角 R10",
+      "score": 1.0,
+      "reason": "已标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:倒角 1×45°（共 8 处）",
+      "score": 0.0,
+      "reason": "未标注",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:x 方向位置（17 个）",
+      "score": 0.765,
+      "reason": "只有 13/17 个位置能由尺寸确定（缺定位或定形尺寸）",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:y 方向位置（10 个）",
+      "score": 0.6,
+      "reason": "只有 6/10 个位置能由尺寸确定（缺定位或定形尺寸）",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:z 方向位置（11 个）",
+      "score": 0.364,
+      "reason": "只有 4/11 个位置能由尺寸确定（缺定位或定形尺寸）",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "completeness:剖视图（零件有沉孔/盲孔等内部结构）",
+      "score": 0.0,
+      "reason": "缺少剖视图",
+      "component": "completeness",
+      "component_weight": 40
+    },
+    {
+      "id": "standard:有主视图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "standard:至少 3 个正交/剖/向视图",
+      "score": 1.0,
+      "reason": "实际 3 个",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "standard:有轴测图",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "standard:尺寸数量 ≥ 10（含孔标注）",
+      "score": 1.0,
+      "reason": "实际 16 个尺寸 + 1 组孔标注",
+      "component": "standard",
+      "component_weight": 10
+    },
+    {
+      "id": "consistency:视图标签不重复",
+      "score": 1.0,
+      "reason": "通过",
+      "component": "consistency",
+      "component_weight": 10
+    },
+    {
+      "id": "layout:issue1",
+      "score": 0.0,
+      "reason": "TOP VIEW: the vertical '100 PITCH' dimension/extension line runs through the leader note '2X VERTICAL STEPPED BORES / DIA 23 OUTER / DIA 20 MID / TRANSITIONS PER STEP MODEL', crossing the words 'OUTER' and 'TRANSITIONS'; the leader arrow line also passes through 'DIA 23'",
+      "component": "layout",
+      "component_weight": 5
+    },
+    {
+      "id": "layout:issue2",
+      "score": 0.0,
+      "reason": "TOP VIEW: the same vertical dimension line (and its arrowhead) crosses the note '80 x 50 OPENING / R10 CORNERS / DEPTH 45 FROM TOP', overlapping 'OPENING', the 'R' of 'R10' and 'DEPTH 45', so those are hard to read",
+      "component": "layout",
+      "component_weight": 5
+    },
+    {
+      "id": "layout:issue3",
+      "score": 0.0,
+      "reason": "TOP VIEW: the vertical centerline and the 75 dimension extension line run through the 'TOP VIEW' label text",
+      "component": "layout",
+      "component_weight": 5
+    }
+  ]
+}

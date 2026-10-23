@@ -34,7 +34,7 @@ from .schema import Drawing, FeatureInventory, FidelityJudgement
 MODEL = "claude-opus-5-5"
 EFFORT = os.environ.get("DRAWING_GRADER_EFFORT", "high")
 # 修改某一步的 prompt 后只递增该步的版本号，其他步骤的缓存仍然有效
-PROMPT_VERSIONS = {"drawing": "v5", "inventory": "v3", "fidelity": "v4"}
+PROMPT_VERSIONS = {"drawing": "v6", "inventory": "v3", "fidelity": "v4"}
 CACHE_DIR = Path(os.environ.get("DRAWING_GRADER_CACHE", Path(__file__).resolve().parent.parent / ".grader_cache"))
 CLI_TIMEOUT_S = 1200
 CLI_RETRIES = 2
@@ -55,6 +55,7 @@ EXTRACT_PROMPT = """你是机械制图审图员。请把这张工程图纸中出
 - 视图类型：主视图 main；俯视/左视/右视等基本视图 projection；剖视 section；向视（VIEW G 之类）direction；局部放大 detail；轴测 isometric。
 - 孔标注（如 '4×Ø4.2 ↧23 / M5-6H ↧20 BOTH SIDES'）放进 holes，不要再重复记到 dimensions。
 - 带数量前缀的深度尺寸（如 '4-↧35'）记为 dimensions 中 kind='depth'、count=4。
+- 每个尺寸都要写 orientation：看尺寸线（不是文字）的走向，水平为 horizontal，竖直为 vertical，沿倾斜边标注为 aligned；直径、半径、角度写 none。文字竖着写但尺寸线是竖直的，仍是 vertical。
 - 公差 '0.000 / -0.020' 记为 upper=0, lower=-0.02；'±0.02' 记为 upper=0.02, lower=-0.02。
 - 图上没有标题栏或某字段时填 null；没有技术要求时为空列表。
 - is_engineering_drawing：只有真正的机械工程图（正交视图 + 尺寸标注）才为 true；3D 渲染图、照片、空白图、草图涂鸦为 false，此时其余列表可为空。
@@ -143,11 +144,26 @@ def _call_api(out_type: type[T], images: Images, prompt: str) -> tuple[T, dict]:
 # ---------- cli 方式（claude -p）----------
 
 def _call_cli(out_type: type[T], images: Images, prompt: str) -> tuple[T, dict]:
+    """先把图片复制成中性文件名（image_1.png …）再交给 claude -p：
+    原路径里可能含有生成者信息（如 outputs/claude/…），不能让读图模型看到，避免自我偏好。"""
+    tmp = Path(tempfile.mkdtemp(prefix="dg_"))
+    try:
+        anon = []
+        for i, (label, p) in enumerate(images, 1):
+            dst = tmp / f"image_{i}{p.suffix.lower()}"
+            shutil.copyfile(p, dst)
+            anon.append((label, dst))
+        return _call_cli_anonymized(out_type, anon, prompt)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def _call_cli_anonymized(out_type: type[T], images: Images, prompt: str) -> tuple[T, dict]:
     exe = shutil.which("claude")
     if not exe:
         raise RuntimeError("找不到 claude 命令，请先安装并登录 Claude Code，或设置 ANTHROPIC_API_KEY 使用 api 方式")
 
-    listing = "\n".join(f"{i}. {label}：{p.resolve()}" for i, (label, p) in enumerate(images, 1))
+    listing ="\n".join(f"{i}. {label}：{p.resolve()}" for i, (label, p) in enumerate(images, 1))
     full_prompt = (
         "先用 Read 工具逐一查看下列图片（必须全部查看，不要做其他任何操作）：\n"
         f"{listing}\n\n{prompt}\n\n看完图片后直接给出结构化结果。"

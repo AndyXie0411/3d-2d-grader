@@ -1,0 +1,207 @@
+{
+  "total": 97.73,
+  "capped_by": "",
+  "needs_review": false,
+  "agreement": {},
+  "gates": [
+    {
+      "id": "gate:is_engineering_drawing",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:has_orthographic_view",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:at_least_3_dimensions",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "components": [
+    {
+      "name": "accuracy",
+      "score": 100.0,
+      "weight": 35,
+      "details": [
+        {
+          "name": "accuracy",
+          "score": 100.0,
+          "weight": 1,
+          "matched": [
+            "[MAIN] linear 150",
+            "[MAIN] linear 32.5",
+            "[MAIN] linear 85",
+            "[MAIN] linear 20",
+            "[MAIN] linear 20",
+            "[MAIN] linear 25",
+            "[MAIN] linear 32",
+            "[MAIN] linear 45",
+            "[MAIN] linear 58",
+            "[MAIN] linear 34",
+            "[MAIN] linear 60",
+            "[SECTION A-A] diameter 23",
+            "[SECTION A-A] diameter 20",
+            "[SECTION A-A] linear 35",
+            "[SECTION A-A] linear 100",
+            "[SECTION A-A] linear 35",
+            "[SECTION A-A] linear 100",
+            "[SECTION A-A] linear 25",
+            "[SECTION B-B] linear 40",
+            "[SECTION B-B] linear 40",
+            "[SECTION B-B] diameter 22",
+            "[SECTION B-B] diameter 25",
+            "[TOP] radius 10",
+            "[TOP] linear 50",
+            "[TOP] linear 80",
+            "[TOP] linear 150",
+            "[TOP] linear 30",
+            "[TOP] linear 18",
+            "[VIEW C] linear 40",
+            "[VIEW C] linear 30",
+            "[VIEW D] linear 40",
+            "[VIEW D] linear 18",
+            "[VIEW D] linear 66",
+            "[MAIN] 8×Ø4.2 ↧22：与 STEP 一致",
+            "[MAIN] 2×Ø4.2 ↧23：与 STEP 一致",
+            "[TOP] 8×Ø4.2 ↧19：与 STEP 一致",
+            "[VIEW C] 8×Ø6.8 ↧32：与 STEP 一致",
+            "[VIEW D] 4×Ø5 ↧32：与 STEP 一致"
+          ],
+          "missing": [],
+          "extra": [],
+          "notes": [
+            "图上 39 个数值中，39 个与 STEP 完全一致",
+            "视图方向推断：MAIN=xz；SECTION A-A=yz；SECTION B-B=xy或xz或yx或yz或zx或zy；TOP=xy；VIEW C=xy或xz或yz或zy；VIEW D=xz或yx或yz或zx"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "completeness",
+      "score": 94.3,
+      "weight": 40,
+      "details": [
+        {
+          "name": "completeness",
+          "score": 94.3,
+          "weight": 1,
+          "matched": [
+            "外形尺寸 x 150：已标注",
+            "外形尺寸 y 150：已标注",
+            "外形尺寸 z 100：已标注",
+            "孔 8×Ø4.2 ↧19：已完整标注",
+            "孔 16×Ø4.2 ↧22：已完整标注",
+            "孔 4×Ø4.2 ↧23：已完整标注",
+            "孔 4×Ø5 ↧32：已完整标注",
+            "孔 8×Ø6.8 ↧32：已完整标注",
+            "圆角 R10：已标注",
+            "x 方向位置（17 个）：全部能由尺寸确定",
+            "y 方向位置（10 个）：全部能由尺寸确定",
+            "z 方向位置（11 个）：全部能由尺寸确定",
+            "剖视图（零件有沉孔/盲孔等内部结构）：已有"
+          ],
+          "missing": [
+            "孔 2×Ø20 THRU：未写 THRU",
+            "孔 2×Ø22 THRU：未写 THRU",
+            "孔 4×Ø23 ↧35：数量未标全",
+            "孔 4×Ø25 ↧40：数量未标全",
+            "倒角 1×45°（共 8 处）：只标了 1 处"
+          ],
+          "extra": [],
+          "notes": [
+            "STEP 推出 15 项必须标注的特征（89%）和 3 个方向的位置链（100%）"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "standard",
+      "score": 100.0,
+      "weight": 10,
+      "details": [
+        {
+          "name": "standard",
+          "score": 100.0,
+          "weight": 1.0,
+          "matched": [
+            "有主视图",
+            "至少 3 个正交/剖/向视图：实际 6 个",
+            "有轴测图",
+            "尺寸数量 ≥ 10（含孔标注）：实际 33 个尺寸 + 5 组孔标注"
+          ],
+          "missing": [],
+          "extra": [],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "consistency",
+      "score": 100.0,
+      "weight": 10,
+      "details": [
+        {
+          "name": "consistency",
+          "score": 100.0,
+          "weight": 1.0,
+          "matched": [
+            "[SECTION A-A] parallelism 引用的基准已定义",
+            "[SECTION A-A] perpendicularity 引用的基准已定义",
+            "[SECTION B-B] parallelism 引用的基准已定义",
+            "基准 A 被形位公差引用",
+            "剖切/向视符号 A 有对应视图",
+            "剖切/向视符号 B 有对应视图",
+            "剖切/向视符号 C 有对应视图",
+            "剖切/向视符号 D 有对应视图",
+            "视图 SECTION A-A 在其他视图上有剖切/投射符号",
+            "视图 SECTION B-B 在其他视图上有剖切/投射符号",
+            "视图 VIEW C 在其他视图上有剖切/投射符号",
+            "视图 VIEW D 在其他视图上有剖切/投射符号",
+            "剖视图 SECTION A-A 画了剖面线",
+            "剖视图 SECTION B-B 画了剖面线",
+            "视图标签不重复",
+            "[MAIN] 8×Ø4.2 M5-6H 底孔直径正确",
+            "[MAIN] 8×Ø4.2 螺纹深度 < 钻孔深度",
+            "[MAIN] 2×Ø4.2 M5-6H 底孔直径正确",
+            "[MAIN] 2×Ø4.2 螺纹深度 < 钻孔深度",
+            "[TOP] 8×Ø4.2 M5-6H 底孔直径正确",
+            "[TOP] 8×Ø4.2 螺纹深度 < 钻孔深度",
+            "[VIEW C] 8×Ø6.8 M8-6H 底孔直径正确",
+            "[VIEW C] 8×Ø6.8 螺纹深度 < 钻孔深度",
+            "[VIEW D] 4×Ø5 M6-6H 底孔直径正确",
+            "[VIEW D] 4×Ø5 螺纹深度 < 钻孔深度",
+            "[SECTION A-A] Ra1.6 属于标准系列",
+            "[SECTION B-B] Ra3.2 属于标准系列",
+            "[SECTION B-B] Ra1.6 属于标准系列",
+            "[VIEW D] Ra3.2 属于标准系列",
+            "[GENERAL] Ra6.3 属于标准系列"
+          ],
+          "missing": [],
+          "extra": [],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "layout",
+      "score": 100.0,
+      "weight": 5,
+      "details": [
+        {
+          "name": "layout",
+          "score": 100.0,
+          "weight": 1,
+          "matched": [],
+          "missing": [],
+          "extra": [],
+          "notes": [
+            "每个排版缺陷扣 10%"
+          ]
+        }
+      ]
+    }
+  ]
+}

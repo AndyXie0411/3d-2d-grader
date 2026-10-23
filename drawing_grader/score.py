@@ -210,9 +210,10 @@ def grade(ref: Drawing, cand: Drawing, weights: dict[str, float] | None = None, 
     w = {**DEFAULT_WEIGHTS, **(weights or {})}
     dim_ok = hole_ok = None
     if geo is not None:
-        from .step_geometry import verify_dimension, verify_hole
+        from .step_geometry import dim_axes, verify_dimension, verify_hole, view_axes
 
-        dim_ok = lambda d: verify_dimension(geo, d.kind, d.value)
+        mapping = view_axes(geo, cand)
+        dim_ok = lambda d: verify_dimension(geo, d.kind, d.value, dim_axes(d, mapping), d.orientation)
         hole_ok = lambda h: verify_hole(geo, h)[0] >= 0.999
     ref_dims, ref_holes = _dims_to_holes(ref)
     cand_dims, cand_holes = _dims_to_holes(cand)

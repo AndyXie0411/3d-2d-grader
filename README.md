@@ -31,14 +31,17 @@ The STEP file is analysed with OpenCascade (`cadquery-ocp`). The analysis extrac
 - overall size (bounding box)
 - every hole: diameter, depth (including the entry chamfer), through or blind, counterbored or not, and how many
 - outer diameters (shafts, bosses), fillet radii, and chamfer sizes and counts
-- every true distance: parallel faces, edge lengths, and hole-to-face and hole-to-hole offsets
+- every true distance, grouped by direction (x / y / z): parallel faces, edge lengths, and hole-to-face and hole-to-hole offsets
 - whether the part has internal features that need a section view
 
-### 3. Score
+### 3. Match each view to the part's axes
+Each dimension is extracted together with its orientation on the sheet: horizontal, vertical or aligned. For every view, the grader tries all six ways the view's horizontal and vertical directions could map onto the part's x / y / z axes. It keeps the mapping under which the most of that view's dimensions turn out to be real distances. After that, each dimension is checked only against the distances along its own axis, which makes a lucky match much rarer.
+
+### 4. Score
 
 | Component | Weight | What it checks |
 |---|---|---|
-| **Accuracy** (STEP) | 35 | Every value on the drawing (dimensions, hole sizes and depths, chamfers) must exist in the real geometry. Wrong values lose points. |
+| **Accuracy** (STEP) | 35 | Every value on the drawing (dimensions, hole sizes and depths, chamfers) must exist in the real geometry, **along the direction it is drawn in**. Wrong values lose points. |
 | **Completeness** (STEP) | 40 | Everything the STEP says must be dimensioned actually is (details below). |
 | **Standard** | 10 | Main view, at least 3 orthographic/section/direction views, an isometric view, and enough dimensions. |
 | **Consistency** | 10 | The drawing does not contradict itself: GD&T datums are defined, every section mark has its view, tap-drill sizes match the thread, thread depth is less than drill depth. |
@@ -205,6 +208,6 @@ examples/           manifest template
 
 - **Units:** values are compared in millimetres. Inch drawings are not supported yet.
 - **Part types:** tuned for machined prismatic and turned parts (faces, holes, chamfers, fillets). Sheet metal, castings and free-form surfaces are only partly covered.
-- **Value matching:** a dimension is checked by its value, not by which feature it points to. On a complex part about 8 % of random values happen to equal some real distance, so a wrong value is occasionally missed.
+- **Value matching:** a dimension is checked by its value and direction, not by which feature it points to. On a complex part about 3 % of random values still happen to equal a real distance in the same direction, so a wrong value is occasionally missed. Views with only one or two dimensions can't always be matched to a unique direction, and fall back to checking every direction.
 - **Standard thresholds** (3 views, 10 dimensions) may be too strict for very simple parts.
 - **New part types:** run `check` once on each new kind of part to confirm the grader behaves as expected before trusting its scores.

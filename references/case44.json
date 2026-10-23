@@ -51,28 +51,32 @@
       "kind": "linear",
       "value": 60,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 58,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 150,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 40,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "MAIN",
@@ -83,14 +87,16 @@
         "lower": 0.0,
         "fit": null
       },
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 20,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "MAIN",
@@ -101,42 +107,48 @@
         "lower": -0.02,
         "fit": null
       },
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 66,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 45,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 32,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 18,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "MAIN",
       "kind": "linear",
       "value": 16,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "MAIN",
@@ -147,28 +159,32 @@
         "lower": 0.0,
         "fit": null
       },
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "A-A",
       "kind": "linear",
       "value": 55,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "A-A",
       "kind": "linear",
       "value": 50,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "A-A",
       "kind": "linear",
       "value": 150,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "A-A",
@@ -179,7 +195,8 @@
         "lower": 0.0,
         "fit": null
       },
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     },
     {
       "view": "A-A",
@@ -190,7 +207,8 @@
         "lower": -0.02,
         "fit": null
       },
-      "count": 4
+      "count": 4,
+      "orientation": "vertical"
     },
     {
       "view": "E-E",
@@ -201,21 +219,24 @@
         "lower": -0.02,
         "fit": null
       },
-      "count": 4
+      "count": 4,
+      "orientation": "vertical"
     },
     {
       "view": "VIEW H",
       "kind": "linear",
       "value": 18,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "vertical"
     },
     {
       "view": "VIEW H",
       "kind": "linear",
       "value": 30,
       "tolerance": null,
-      "count": 1
+      "count": 1,
+      "orientation": "horizontal"
     }
   ],
   "holes": [

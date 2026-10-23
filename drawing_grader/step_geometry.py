@@ -24,7 +24,7 @@ from collections import defaultdict
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-GEOMETRY_VERSION = "g5"  # 修改分析逻辑后递增，使缓存失效
+GEOMETRY_VERSION = "g6"  # 修改分析逻辑后递增，使缓存失效
 VALUE_TOL = 0.05  # mm；图纸一般标到 0.1 mm 或整数
 ANGLE_TOL = 0.5   # 度
 DRILL_POINT_HALF_ANGLE = (55.0, 62.0)  # 118°/120° 钻尖
@@ -59,6 +59,9 @@ class StepGeometry:
     needs_section: bool = False                                  # 有沉孔/非螺纹盲孔等内部结构，需要剖视图
     # 沿 x/y/z 每个方向上需要被尺寸确定的位置：垂直于该方向的平面位置、孔轴在该方向上的坐标
     positions: dict[str, list[float]] = field(default_factory=dict)
+    # 按方向分开的真实距离：沿 x/y/z 的所有位置差、边在该方向的投影、该方向的孔深；aligned 为斜边真实长度
+    linear_by_axis: dict[str, list[float]] = field(default_factory=dict)
+    aligned: list[float] = field(default_factory=list)
     source: str = ""
     notes: list[str] = field(default_factory=list)
 
@@ -69,6 +72,10 @@ class StepGeometry:
 
     def has_linear(self, v: float) -> bool:
         return self._near(v, self.linear)
+
+    def has_linear_on(self, axes: set[str], v: float) -> bool:
+        """只在指定方向上找（尺寸的方向已知时用，误判率远低于 has_linear）。"""
+        return any(self._near(v, self.linear_by_axis.get(a, [])) for a in axes)
 
     def has_diameter(self, v: float) -> bool:
         return self._near(v, self.diameters)
@@ -192,14 +199,22 @@ def analyze_step(path: str | Path) -> StepGeometry:
             linear.append(abs(dot(n1, sub(o1, o2))))
 
     # 直线边：长度及在三个主方向上的投影
+    axis_lin: dict[str, list[float]] = {k: [] for k in "xyz"}
+    aligned: list[float] = []
     ex = TopExp_Explorer(shape, TopAbs_EDGE)
     while ex.More():
         cur = BRepAdaptor_Curve(TopoDS.Edge_s(ex.Current()))
         if cur.GetType() == GeomAbs_Line:
             p0, p1 = cur.Value(cur.FirstParameter()), cur.Value(cur.LastParameter())
             vec = (p1.X() - p0.X(), p1.Y() - p0.Y(), p1.Z() - p0.Z())
-            linear.append(norm(vec))
-            linear += [abs(dot(vec, ax)) for ax in axes]
+            length = norm(vec)
+            linear.append(length)
+            proj = [abs(dot(vec, ax)) for ax in axes]
+            linear += proj
+            for k, v in zip("xyz", proj):
+                axis_lin[k].append(v)
+            if max(proj) < length - VALUE_TOL:  # 斜边
+                aligned.append(length)
         ex.Next()
 
     # 孔：同轴（方向平行且轴线重合）、同半径的圆柱面合并
@@ -256,7 +271,7 @@ def analyze_step(path: str | Path) -> StepGeometry:
                 return False
         return True
 
-    raw_holes, fillet_radii, outer_diameters = [], [], []
+    raw_holes, fillet_radii, outer_diameters, outer_axes = [], [], [], []
     for g in lines:
         for seg in split_segments(g):
             ref = seg[0]
@@ -269,6 +284,7 @@ def analyze_step(path: str | Path) -> StepGeometry:
             # 孔是凹面；轴、凸台的外圆柱面是凸面
             if sum(c["concave"] for c in seg) * 2 <= len(seg):
                 outer_diameters.append(2 * ref["r"])
+                outer_axes.append((ref["org"], ref["dir"]))
                 continue
             for k in cones:  # 入口 45° 倒角并入孔深
                 if CHAMFER_HALF_ANGLE[0] <= k["half"] <= CHAMFER_HALF_ANGLE[1] and same_line(ref, k):
@@ -333,11 +349,24 @@ def analyze_step(path: str | Path) -> StepGeometry:
         k = direction_of(n)
         if k != "斜":
             positions[k].add(round(po["xyz".index(k)], 3))
-    for h in raw_holes:
-        o, d = h["ref"]["org"], h["ref"]["dir"]
+    for o, d in [(h["ref"]["org"], h["ref"]["dir"]) for h in raw_holes] + outer_axes:
         for i, k in enumerate(axis_names):
-            if abs(d[i]) < 1e-6:  # 孔轴垂直于该方向 -> 孔在该方向上有一个位置
+            if abs(d[i]) < 1e-6:  # 轴线垂直于该方向 -> 孔/外圆在该方向上有一个中心位置
                 positions[k].add(round(o[i], 3))
+    for k, lo_, hi_ in zip(axis_names, (x0, y0, z0), (x1, y1, z1)):  # 零件两端
+        positions[k] |= {round(lo_, 3), round(hi_, 3)}
+
+    # 每个方向上的真实距离 = 该方向所有位置两两之差 + 边的投影 + 沿该方向的孔深 + 总长
+    for h in raw_holes:
+        k = direction_of(h["ref"]["dir"])
+        if k != "斜":
+            axis_lin[k].append(h["len"])
+    linear_by_axis = {}
+    for i, k in enumerate(axis_names):
+        pts = sorted(positions[k])
+        diffs = [b - a for j, a in enumerate(pts) for b in pts[j + 1:]]
+        linear_by_axis[k] = _uniq(diffs + axis_lin[k] + [bbox[i]])
+        linear += diffs
 
     chamfer_cones = [k for k in cones if CHAMFER_HALF_ANGLE[0] <= k["half"] <= CHAMFER_HALF_ANGLE[1]]
     chamfers = [abs(k["v"][1] - k["v"][0]) * math.cos(math.radians(k["half"])) for k in chamfer_cones]
@@ -358,6 +387,8 @@ def analyze_step(path: str | Path) -> StepGeometry:
         fillet_radii=_uniq(fillet_radii),
         needs_section=needs_section,
         positions={k: sorted(v) for k, v in positions.items() if v},
+        linear_by_axis=linear_by_axis,
+        aligned=_uniq(aligned),
         source=Path(path).name,
     )
 
@@ -379,7 +410,48 @@ def load_step_geometry(path: str | Path, cache_dir: Path | None = None) -> StepG
 
 # ---------- 用 STEP 几何给图纸打分 ----------
 
-def verify_dimension(geo: StepGeometry, kind: str, value: float) -> bool:
+_AXIS_PAIRS = [(h, v) for h in "xyz" for v in "xyz" if h != v]
+
+
+def view_axes(geo: StepGeometry, cand) -> dict[str, set[tuple[str, str]]]:
+    """推断每个视图的 (水平方向, 竖直方向) 对应零件的哪两个坐标轴。
+
+    做法：对 6 种可能的对应关系逐一试，看视图里水平尺寸落在哪个轴的真实距离里、竖直尺寸落在哪个轴里，
+    取吻合最多的那种。并列时保留所有并列项（例如 150×150 的正方形零件 x、y 分不清），之后在并列的轴里都找。
+    没有方向信息的视图不出现在结果里，其尺寸退回到"任意方向"核对。
+    """
+    per_view: dict[str, tuple[list[float], list[float]]] = {}
+    for x in cand.dimensions:
+        if x.kind in ("linear", "depth") and x.orientation in ("horizontal", "vertical"):
+            hv = per_view.setdefault(x.view, ([], []))
+            (hv[0] if x.orientation == "horizontal" else hv[1]).append(x.value)
+    out = {}
+    for view, (hs, vs) in per_view.items():
+        scores = {pair: sum(geo.has_linear_on({pair[0]}, v) for v in hs) + sum(geo.has_linear_on({pair[1]}, v) for v in vs)
+                  for pair in _AXIS_PAIRS}
+        best = max(scores.values())
+        if best > 0:
+            out[view] = {pair for pair, sc in scores.items() if sc == best}
+    return out
+
+
+def dim_axes(x, mapping: dict[str, set[tuple[str, str]]]) -> set[str] | None:
+    """这个尺寸应当沿零件的哪个（些）轴；None 表示方向未知，退回到任意方向核对。"""
+    if x.kind not in ("linear", "depth") or x.orientation not in ("horizontal", "vertical"):
+        return None
+    pairs = mapping.get(x.view)
+    if not pairs:
+        return None
+    return {p[0] if x.orientation == "horizontal" else p[1] for p in pairs}
+
+
+def verify_dimension(geo: StepGeometry, kind: str, value: float, axes: set[str] | None = None,
+                     orientation: str = "none") -> bool:
+    if kind in ("linear", "depth"):
+        if axes:
+            return geo.has_linear_on(axes, value)
+        if orientation == "aligned":
+            return geo._near(value, geo.aligned) or geo.has_linear(value)
     return {"linear": geo.has_linear, "depth": geo.has_linear, "diameter": geo.has_diameter,
             "radius": geo.has_radius, "angle": geo.has_angle}[kind](value)
 
@@ -412,13 +484,16 @@ def score_accuracy(geo: StepGeometry, cand):
     from .score import CategoryResult
 
     res = CategoryResult(name="accuracy", score=0.0, weight=1)
+    mapping = view_axes(geo, cand)
     prec = []
     for x in cand.dimensions:
-        ok = verify_dimension(geo, x.kind, x.value)
+        axes = dim_axes(x, mapping)
+        ok = verify_dimension(geo, x.kind, x.value, axes, x.orientation)
         prec.append(float(ok))
+        where = f"沿 {'/'.join(sorted(axes))} 方向" if axes else "任意方向"
         tag = f"[{x.view}] {x.kind} {x.value:g}"
-        res.add_item(tag, float(ok), "STEP 中存在" if ok else "STEP 中找不到这个尺寸（标错）")
-        (res.matched if ok else res.missing).append(tag + ("" if ok else "：STEP 中找不到（标错）"))
+        res.add_item(tag, float(ok), f"STEP 中{where}存在" if ok else f"STEP 中{where}找不到这个尺寸（标错）")
+        (res.matched if ok else res.missing).append(tag + ("" if ok else f"：STEP 中{where}找不到（标错）"))
     for h in cand.holes:
         sc, why = verify_hole(geo, h)
         prec.append(sc)
@@ -432,7 +507,9 @@ def score_accuracy(geo: StepGeometry, cand):
         if not ok:
             res.missing.append(f"倒角 {c.size:g}：STEP 中没有")
     res.score = sum(prec) / len(prec) if prec else 0.0
-    res.notes = [f"图上 {len(prec)} 个数值中，{sum(p >= 0.999 for p in prec)} 个与 STEP 完全一致"]
+    res.notes = [f"图上 {len(prec)} 个数值中，{sum(p >= 0.999 for p in prec)} 个与 STEP 完全一致",
+                 "视图方向推断：" + "；".join(f"{v}={'或'.join(h + v2 for h, v2 in sorted(ps))}"
+                                         for v, ps in sorted(mapping.items()))]
     return res
 
 
@@ -482,6 +559,13 @@ def score_completeness(geo: StepGeometry, cand):
     near = lambda a, b: a is not None and b is not None and abs(a - b) <= VALUE_TOL
     dims, callouts = _dims_to_holes(cand)
     lin = [x.value for x in dims if x.kind in ("linear", "depth")]
+    # 每个方向上可用的尺寸：方向已知的只算到它的方向；方向未知的各方向都算（退回旧行为）
+    mapping = view_axes(geo, cand)
+    lin_axis: dict[str, list[float]] = {k: [] for k in "xyz"}
+    for x in dims:
+        if x.kind in ("linear", "depth"):
+            for k in (dim_axes(x, mapping) or "xyz"):
+                lin_axis[k].append(x.value)
     mirror = any(MIRROR_NOTE.search(t) for t in cand.tech_requirements) or any(h.both_sides for h in cand.holes)
     items: list[float] = []      # 特征项
     pos_items: list[float] = []  # 位置链
@@ -491,9 +575,9 @@ def score_completeness(geo: StepGeometry, cand):
         res.add_item(item_id, sc, ok_text if sc >= 0.999 else miss_text)
         (res.matched if sc >= 0.999 else res.missing).append(f"{item_id}：{ok_text if sc >= 0.999 else miss_text}")
 
-    for b in geo.bbox:
-        ok = any(near(v, b) for v in lin)
-        add(f"外形尺寸 {b:g}", float(ok), "已标注", "未标注")
+    for k, b in zip("xyz", geo.bbox):
+        ok = any(near(v, b) for v in lin_axis[k])
+        add(f"外形尺寸 {k} {b:g}", float(ok), "已标注", "未标注")
 
     for g in geo.holes:
         label = f"{g.count}×Ø{g.diameter:g}" + (" THRU" if g.through else f" ↧{g.depth:g}")
@@ -535,7 +619,7 @@ def score_completeness(geo: StepGeometry, cand):
             "未标注" if not calls else f"只标了 {total} 处")
 
     for axis, nodes in geo.positions.items():
-        det, total = _chain_determined(nodes, lin)
+        det, total = _chain_determined(nodes, lin_axis[axis])
         add(f"{axis} 方向位置（{total} 个）", det / total, "全部能由尺寸确定",
             f"只有 {det}/{total} 个位置能由尺寸确定（缺定位或定形尺寸）", pos_items)
 

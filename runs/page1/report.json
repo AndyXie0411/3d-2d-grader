@@ -1,0 +1,160 @@
+{
+  "total": 78.49,
+  "capped_by": "",
+  "needs_review": false,
+  "agreement": {},
+  "gates": [
+    {
+      "id": "gate:is_engineering_drawing",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:has_orthographic_view",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "id": "gate:at_least_3_dimensions",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "components": [
+    {
+      "name": "accuracy",
+      "score": 100.0,
+      "weight": 35,
+      "details": [
+        {
+          "name": "accuracy",
+          "score": 100.0,
+          "weight": 1,
+          "matched": [
+            "[TOP VIEW] linear 150",
+            "[TOP VIEW] linear 150",
+            "[TOP VIEW] linear 100",
+            "[TOP VIEW] linear 25",
+            "[TOP VIEW] linear 75",
+            "[TOP VIEW] linear 80",
+            "[TOP VIEW] linear 50",
+            "[TOP VIEW] radius 10",
+            "[TOP VIEW] depth 45",
+            "[FRONT VIEW] linear 85",
+            "[FRONT VIEW] linear 32.5",
+            "[FRONT VIEW] linear 100",
+            "[FRONT VIEW] linear 75",
+            "[FRONT VIEW] linear 150",
+            "[RIGHT VIEW] linear 100",
+            "[RIGHT VIEW] linear 150",
+            "[TOP VIEW] 2×Ø23：与 STEP 一致"
+          ],
+          "missing": [],
+          "extra": [],
+          "notes": [
+            "图上 17 个数值中，17 个与 STEP 完全一致"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "completeness",
+      "score": 50.0,
+      "weight": 40,
+      "details": [
+        {
+          "name": "completeness",
+          "score": 50.0,
+          "weight": 1,
+          "matched": [
+            "外形尺寸 150：已标注",
+            "外形尺寸 150：已标注",
+            "外形尺寸 100：已标注",
+            "圆角 R10：已标注",
+            "y 方向位置（10 个）：全部能由尺寸确定"
+          ],
+          "missing": [
+            "孔 8×Ø4.2 ↧19：孔径未标",
+            "孔 16×Ø4.2 ↧22：孔径未标",
+            "孔 4×Ø4.2 ↧23：孔径未标",
+            "孔 4×Ø5 ↧32：孔径未标",
+            "孔 8×Ø6.8 ↧32：孔径未标",
+            "孔 2×Ø20 THRU：孔径未标",
+            "孔 2×Ø22 THRU：孔径未标",
+            "孔 4×Ø23 ↧35：未标孔深、数量未标全",
+            "孔 4×Ø25 ↧40：孔径未标",
+            "倒角 1×45°（共 8 处）：未标注",
+            "x 方向位置（17 个）：只有 13/17 个位置能由尺寸确定（缺定位或定形尺寸）",
+            "z 方向位置（11 个）：只有 4/11 个位置能由尺寸确定（缺定位或定形尺寸）",
+            "剖视图（零件有沉孔/盲孔等内部结构）：缺少剖视图"
+          ],
+          "extra": [],
+          "notes": [
+            "STEP 推出 15 项必须标注的特征（29%）和 3 个方向的位置链（71%）"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "standard",
+      "score": 100.0,
+      "weight": 10,
+      "details": [
+        {
+          "name": "standard",
+          "score": 100.0,
+          "weight": 1.0,
+          "matched": [
+            "有主视图",
+            "至少 3 个正交/剖/向视图：实际 3 个",
+            "有轴测图",
+            "尺寸数量 ≥ 10（含孔标注）：实际 16 个尺寸 + 1 组孔标注"
+          ],
+          "missing": [],
+          "extra": [],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "consistency",
+      "score": 100.0,
+      "weight": 10,
+      "details": [
+        {
+          "name": "consistency",
+          "score": 100.0,
+          "weight": 1.0,
+          "matched": [
+            "视图标签不重复"
+          ],
+          "missing": [],
+          "extra": [],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "name": "layout",
+      "score": 70.0,
+      "weight": 5,
+      "details": [
+        {
+          "name": "layout",
+          "score": 70.0,
+          "weight": 1,
+          "matched": [],
+          "missing": [],
+          "extra": [
+            "TOP VIEW: the vertical dimension line of '100 PITCH' runs through the leader-note text '2X VERTICAL STEPPED BORES / DIA 23 OUTER / DIA 20 MID / TRANSITIONS PER STEP MODEL' (crossing 'DIA 23 OUTER' and 'TRANSITIONS').",
+            "TOP VIEW: the '100 PITCH' dimension line and its arrowhead cut through the note '80 x 50 OPENING / R10 CORNERS / DEPTH 45 FROM TOP'. The 'R' in 'R10' is struck through and hard to read.",
+            "TOP VIEW: the vertical centerline / '75' extension line passes through the view label 'TOP VIEW'."
+          ],
+          "notes": [
+            "每个排版缺陷扣 10%"
+          ]
+        }
+      ]
+    }
+  ]
+}

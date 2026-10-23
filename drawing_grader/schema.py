@@ -27,6 +27,8 @@ class Dimension(BaseModel):
     value: float = Field(description="名义尺寸数值（mm 或 度）")
     tolerance: Optional[Tolerance] = Field(description="尺寸公差；无则 null")
     count: int = Field(description="数量前缀，如 '4-↧35' 为 4；无前缀为 1")
+    orientation: Literal["horizontal", "vertical", "aligned", "none"] = Field(
+        description="尺寸线在图纸上的方向：水平 horizontal、竖直 vertical、斜向（沿倾斜边）aligned；直径/半径/角度或无法判断时 none")
 
 
 class HoleCallout(BaseModel):

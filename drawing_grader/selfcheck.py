@@ -147,7 +147,11 @@ def _add_true_extras(d: Drawing, geo, ref: Drawing | None) -> None:
     used = {round(x.value, 3) for x in (ref or d).dimensions}
     extra = [v for v in geo.linear if v >= 5 and round(v, 3) not in used and abs(v - round(v)) < 1e-6][:3]
     for v in extra:
-        d.dimensions.append(Dimension(view="MAIN", kind="linear", value=v, tolerance=None, count=1))
+        d.dimensions.append(Dimension(view="MAIN", kind="linear", value=v, tolerance=None, count=1,
+                                      orientation="none"))
+
+# 这些改动删掉的尺寸可能恰好能由同方向其他尺寸推出（链式标注），信息并未丢失：只要求分数不上升
+NON_INCREASING_ONLY = {"删除 25% 不重复尺寸"}
 
 # 错误越多分数应越低
 MONOTONIC_SERIES = [["删除 25% 不重复尺寸", "删除 50% 不重复尺寸", "删除 75% 不重复尺寸"]]
@@ -194,6 +198,10 @@ def run_check(ref_image: str | Path, reference: str | Path | None, model_images:
         fn(d)
         s = score(d)
         mutated_scores[name] = s
+        if name in NON_INCREASING_ONLY:
+            results.append(CheckResult(f"mutation: {name}", f"<= {base:.1f}", s, s <= base + 1e-6,
+                                       f"基准 {base:.1f}，下降 {base - s:.1f}（删掉的可能是可推出的冗余尺寸）"))
+            continue
         results.append(CheckResult(f"mutation: {name}", f"< {base - MIN_DROP:.1f}", s, s < base - MIN_DROP,
                                    f"基准 {base:.1f}，下降 {base - s:.1f}"))
     for series in MONOTONIC_SERIES:

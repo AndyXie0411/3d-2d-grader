@@ -1,0 +1,474 @@
+{
+  "is_engineering_drawing": true,
+  "injection_text": [],
+  "views": [
+    {
+      "label": "MAIN",
+      "kind": "main",
+      "hatched": false,
+      "cut_lines_shown": [
+        "C"
+      ]
+    },
+    {
+      "label": "SECTION A-A",
+      "kind": "section",
+      "hatched": true,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "SECTION B-B",
+      "kind": "section",
+      "hatched": true,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "TOP",
+      "kind": "projection",
+      "hatched": false,
+      "cut_lines_shown": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "label": "VIEW C",
+      "kind": "direction",
+      "hatched": false,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "VIEW D",
+      "kind": "direction",
+      "hatched": false,
+      "cut_lines_shown": []
+    },
+    {
+      "label": "ISOMETRIC",
+      "kind": "isometric",
+      "hatched": false,
+      "cut_lines_shown": []
+    }
+  ],
+  "dimensions": [
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 32.5,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 85.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 20.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 20.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 25.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 32.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 45.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 58.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 34.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "MAIN",
+      "kind": "linear",
+      "value": 60.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "SECTION A-A",
+      "kind": "diameter",
+      "value": 23.0,
+      "tolerance": {
+        "upper": null,
+        "lower": null,
+        "fit": "H7"
+      },
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "SECTION A-A",
+      "kind": "diameter",
+      "value": 20.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "SECTION A-A",
+      "kind": "linear",
+      "value": 35.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "SECTION A-A",
+      "kind": "linear",
+      "value": 100.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "SECTION A-A",
+      "kind": "linear",
+      "value": 35.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "SECTION A-A",
+      "kind": "linear",
+      "value": 100.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "SECTION A-A",
+      "kind": "linear",
+      "value": 25.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "SECTION B-B",
+      "kind": "linear",
+      "value": 40.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "SECTION B-B",
+      "kind": "linear",
+      "value": 40.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "SECTION B-B",
+      "kind": "diameter",
+      "value": 22.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "SECTION B-B",
+      "kind": "diameter",
+      "value": 25.0,
+      "tolerance": {
+        "upper": null,
+        "lower": null,
+        "fit": "H7"
+      },
+      "count": 1,
+      "orientation": "none"
+    },
+    {
+      "view": "TOP",
+      "kind": "radius",
+      "value": 10.0,
+      "tolerance": null,
+      "count": 4,
+      "orientation": "none"
+    },
+    {
+      "view": "TOP",
+      "kind": "linear",
+      "value": 50.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "TOP",
+      "kind": "linear",
+      "value": 80.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "TOP",
+      "kind": "linear",
+      "value": 150.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "TOP",
+      "kind": "linear",
+      "value": 30.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "TOP",
+      "kind": "linear",
+      "value": 18.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "VIEW C",
+      "kind": "linear",
+      "value": 40.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "VIEW C",
+      "kind": "linear",
+      "value": 30.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "VIEW D",
+      "kind": "linear",
+      "value": 40.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "horizontal"
+    },
+    {
+      "view": "VIEW D",
+      "kind": "linear",
+      "value": 18.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    },
+    {
+      "view": "VIEW D",
+      "kind": "linear",
+      "value": 66.0,
+      "tolerance": null,
+      "count": 1,
+      "orientation": "vertical"
+    }
+  ],
+  "holes": [
+    {
+      "view": "MAIN",
+      "count": 8,
+      "diameter": 4.2,
+      "depth": 22.0,
+      "through": false,
+      "thread": "M5-6H",
+      "thread_depth": 15.0,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "MAIN",
+      "count": 2,
+      "diameter": 4.2,
+      "depth": 23.0,
+      "through": false,
+      "thread": "M5-6H",
+      "thread_depth": 15.0,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "TOP",
+      "count": 8,
+      "diameter": 4.2,
+      "depth": 19.0,
+      "through": false,
+      "thread": "M5-6H",
+      "thread_depth": 15.0,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "VIEW C",
+      "count": 8,
+      "diameter": 6.8,
+      "depth": 32.0,
+      "through": false,
+      "thread": "M8-6H",
+      "thread_depth": 26.0,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    },
+    {
+      "view": "VIEW D",
+      "count": 4,
+      "diameter": 5.0,
+      "depth": 32.0,
+      "through": false,
+      "thread": "M6-6H",
+      "thread_depth": 26.0,
+      "both_sides": false,
+      "fit": null,
+      "tol_upper": null,
+      "tol_lower": null
+    }
+  ],
+  "chamfers": [
+    {
+      "view": "SECTION A-A",
+      "count": 1,
+      "size": 1.0,
+      "angle": 45.0
+    }
+  ],
+  "gdt": [
+    {
+      "view": "SECTION A-A",
+      "symbol": "parallelism",
+      "value": 0.03,
+      "datums": [
+        "A"
+      ]
+    },
+    {
+      "view": "SECTION A-A",
+      "symbol": "perpendicularity",
+      "value": 0.02,
+      "datums": [
+        "A"
+      ]
+    },
+    {
+      "view": "SECTION B-B",
+      "symbol": "parallelism",
+      "value": 0.02,
+      "datums": [
+        "A"
+      ]
+    }
+  ],
+  "datums": [
+    "A"
+  ],
+  "roughness": [
+    {
+      "view": "SECTION A-A",
+      "ra": 1.6
+    },
+    {
+      "view": "SECTION B-B",
+      "ra": 3.2
+    },
+    {
+      "view": "SECTION B-B",
+      "ra": 1.6
+    },
+    {
+      "view": "VIEW D",
+      "ra": 3.2
+    },
+    {
+      "view": "GENERAL",
+      "ra": 6.3
+    }
+  ],
+  "title_block": {
+    "part_title": "SUPPORT BASE",
+    "case_id": "CASE44-01",
+    "material": "Steel 45 (C45)",
+    "scale": "1:1",
+    "units": "mm",
+    "projection": "first_angle",
+    "sheet": "1/1"
+  },
+  "tech_requirements": [
+    "1. Untoleranced linear dimensions per GB/T 1804-m (ISO 2768-m).",
+    "2. Untoleranced geometric tolerances per GB/T 1184-K (ISO 2768-K).",
+    "3. Hole edge chamfers C1 as shown; break all other sharp edges C0.3-C0.5, deburr.",
+    "4. Threads per GB/T 196 / GB/T 197 (ISO metric), class 6H; 90° countersink at thread entry.",
+    "5. Holes not dimensioned on back face (VIEW D) are identical to front face (main view).",
+    "6. Datum A is the common plane of the two foot bottom faces.",
+    "7. Machined surfaces shall be free of scratches, dents and corrosion.",
+    "8. All dimensions in mm. First-angle projection."
+  ],
+  "layout_issues": []
+}
